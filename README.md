@@ -1,6 +1,6 @@
 # Hospital System — Patient Queue Management
 
-## Problem Statement (Homework 8: Hospital System)
+## Problem Statement
 - Implement the following system for a hospital.
 - There are 20 different specializations (e.g. Children, Surgery, etc).
 - For each specialization, there are only 5 available spots [queue].
