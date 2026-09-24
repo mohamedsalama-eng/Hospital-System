@@ -43,14 +43,5 @@ A menu loop offering:
 3. Get next patient (prompts for section)
 4. Exit
 
-## Known Issues
-- **Insert logic is swapped versus the spec.** The spec says: regular patients go to the *end* of the queue, urgent patients go to the *beginning*. In the current code:
-  - `status == 0` (regular) does `lst.insert(0, ...)` -> goes to the **beginning** (should be the end).
-  - `status == 1` (urgent) does `lst.append(...)` -> goes to the **end** (should be the beginning).
-
-  This is backwards from the requirement and should be swapped: `status == 0` should `append`, `status == 1` should `insert(0, ...)`.
-
-- **`pickup_patient` always pops from the end (`[-1]`).** Depending on how the insert logic above is fixed, "front of the line" may not correspond to index `-1`. Once the insert order is corrected (urgent at index 0, regular appended at the end), the doctor should pick up from index `0` (the front of the queue), not `-1`.
-
 ## Files
 - `hospital_system.py` — full implementation
